@@ -1,0 +1,372 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block maincontent %}
+<!--Main Content Start-->
+<div class="main-content">
+  <!--Welcome Section-->
+  <section class="welcome-section">
+    <div class="container">
+      <div class="row">
+        <div class="welcome-box">
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-text">
+              <div class="sectio-title-2"> <strong>Welcome to your</strong>
+                <h2>Health Care</h2>
+              </div>
+              <p> The Health Care Management system providing us with the best services and a appointment system.
+                Health Care Management systems supports and promotes evidence-based health policy-making through comprehensive
+                 and rigorous analysis of the dynamics of health care systems.The system is designed to help the patients to make quick 
+                 appointment with the doctors for their treatment.
+              </p>
+              <p>The Health Care Management System is designed to help healthcare providers to collect, store, 
+                retrive and exchange patient healthcare information more efficiently and enable better patient care.</p>
+              <strong class="signature">Nikita Agarwal</strong>
+              <h6 class="designation">Health Care Management</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="welcome-img"> <img src="{% static 'healthcare/images/welcome.jpg' %}" alt=""> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Welcome Section End-->
+
+  <!--Home Services Start-->
+  <section class="home-features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Health Monitoring</h3>
+            <p>We make a free health monitoring for the patients who makes the appointment from us regularly since our healthcare started to work.</p>
+            <a href="appointment.html">Get Free Appointment</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box selected">
+            <h3>First Aid</h3>
+            <p>We provide the First Aid for the patients during emergency .The patient should feel free to ask for first aid please contact us in need.</p>
+            <a href="contact-2.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="features-box">
+            <h3>Emergency Help</h3>
+            <p><span>Monday-Friday:</span> Full Day<br>
+              <span>Satuday:</span> Full Day<br>
+              <span>Sunday:</span> 7:00am - 05:00pm<br>
+            </p>
+            <a href="#">Callfor Info: +917632009201</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Home Services End-->
+
+  <!--Services Section Start-->
+  <section class="home-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3"> <strong>Our Departments</strong>
+            <h2>Departmental Services</h2>
+          </div>
+        </div>
+
+        <!--service style 1-->
+        <div class="col-md-12">
+          <div class="service-style-1">
+            <div class="row">
+              <!--service box start-->
+              {% for service in services %}
+              <div class="col-md-3 col-sm-3">
+                <div class="service-box">
+                  <div class="ser-thumb"> <a href="{% url 'service_details' service.id %}" class="view"><i
+                        class="fa fa-heartbeat" aria-hidden="true"></i></a> <img src="{{ service.thumbnail.url }}"
+                      alt="">
+                  </div>
+                  <div class="ser-content">
+                    <h3><a href="{% url 'service_details' service.id %}">{{ service.title }}</a></h3>
+                    <p>{{ service.description|truncatewords:15 }}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              <!--service box End-->
+            </div>
+          </div>
+        </div>
+        <!--service style 1 End-->
+
+      </div>
+    </div>
+  </section>
+  <!--Services Section End-->
+
+  <!--Heart Care Start-->
+  <section class="heart-care-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-3 white"> <strong>Our Core</strong>
+            <h2>Expert Services</h2>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#service-1" aria-controls="service-1" role="tab"
+                data-toggle="tab"> <i class="fa fa-graduation-cap"></i> Experienced Surgeons</a></li>
+            <li role="presentation"><a href="#service-2" aria-controls="service-2" role="tab" data-toggle="tab"> <i
+                  class="fa fa-heartbeat"></i> Special Treatments</a></li>
+            <li role="presentation"><a href="#service-3" aria-controls="service-3" role="tab" data-toggle="tab"> <i
+                  class="fa fa-cloud"></i> Comfort Environment</a></li>
+            <li role="presentation"><a href="#service-4" aria-controls="service-4" role="tab" data-toggle="tab"> <i
+                  class="fa fa-user-md"></i> Talented Doctors</a></li>
+            <li role="presentation"><a href="#service-5" aria-controls="service-5" role="tab" data-toggle="tab"> <i
+                  class="fa fa-medkit"></i> High Tech Equipments</a></li>
+            <li role="presentation"><a href="#service-6" aria-controls="service-6" role="tab" data-toggle="tab"> <i
+                  class="fa fa-umbrella"></i> Personalized Care</a></li>
+          </ul>
+        </div>
+        <div class="col-md-7 col-sm-7">
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="service-1">
+              <div class="ser-tab-text">
+                <h3>Experienced Surgeons</h3>
+                <p> <i class="fa fa-graduation-cap"></i>The Health Care system has the most experienced surgeons for the patients and with the latest technologies.
+                   The Surgeons are expertized on their fields and have a lot of happy patients.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> The Surgeon has the best team with it to operate.</li>
+                  <li><i class="fa fa-check"></i> The experienced surgeon is procedural expert.</li>
+                  <li><i class="fa fa-check"></i> An experienced surgeon handles the case very firmly.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-2">
+              <div class="ser-tab-text">
+                <h3>Special Treatments</h3>
+                <p> <i class="fa fa-heartbeat"></i> The patiet are provided by the special treatment that is include in the procedure during 
+                the treatment and are also accomplished by the staff for help and are timely assisted to see for any need. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> We give you the best treamet we can.</li>
+                  <li><i class="fa fa-check"></i> you are given nutrients to improve your health.</li>
+                  <li><i class="fa fa-check"></i> we consider your calls as our priority.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-3">
+              <div class="ser-tab-text">
+                <h3>Comfort Environment</h3>
+                <p> <i class="fa fa-cloud"></i> The environment of the Health Care is very fresh and the people will love the environment and 
+                will like to stay here for their treatment happily.The environment is made comfortable by maintaining the hygiene. </p>
+                <ul>
+                  <li><i class="fa fa-check"></i> The environment is surrounded by nature.</li>
+                  <li><i class="fa fa-check"></i> We keep people active by yoga.</li>
+                  <li><i class="fa fa-check"></i> The infrastructur is very comfortable.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-4">
+              <div class="ser-tab-text">
+                <h3>Talented Doctors</h3>
+                <p> <i class="fa fa-user-md"></i> The Health Care system is providing our patients with best doctors for their treatment. 
+                The doctors visits the top hospitals for treating their patients and each doctor is experienced and talented with lot of specialities.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> The doctors are experienced in their fields.</li>
+                  <li><i class="fa fa-check"></i> The doctors are updated with the new technologies.</li>
+                  <li><i class="fa fa-check"></i> The more the doctor is talented the more they are firm in nature.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-5">
+              <div class="ser-tab-text">
+                <h3>High Tech Equipments</h3>
+                <p> <i class="fa fa-medkit"></i> The Health Care system provides us with the latest technologies and equipments to 
+                incfrese the efficiency of the system by increasinf the rate of patients because of the facilities provided.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Equipment efficiency provide high-quality patient care.</li>
+                  <li><i class="fa fa-check"></i> We maintain equipment efficiency to provide quality care and cut costs.</li>
+                  <li><i class="fa fa-check"></i> We use specialized equipment to serve patients better.</li>
+                </ul>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="service-6">
+              <div class="ser-tab-text">
+                <h3>Personalized Care</h3>
+                <p> <i class="fa fa-umbrella"></i> We provide our patient personal care bacause we need our patient should be happy with our work and 
+                their health. We maintain all the hygienne and medicine availability for the patients throughout the day.</p>
+                <ul>
+                  <li><i class="fa fa-check"></i> Parsonalized care makes patient happy.</li>
+                  <li><i class="fa fa-check"></i> Patients feel strong in a caring environment .</li>
+                  <li><i class="fa fa-check"></i> The care provided makes the patient come to our place.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Heart Care End-->
+
+
+  <!--Team Start-->
+  <section class="team">
+    <div class="container">
+      <div class="row">
+        <div class="section-title-3"> <strong>Our Team</strong>
+          <h2>Expert Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for doctor in experts|slice:':4' %}
+        <div class="col-md-3 col-sm-6">
+          <div class="team-box mb50">
+            <div class="team-thumb"> <a href="{% url 'doctor_details' doctor.id %}" class="view"><i class="fa fa-Heart"
+                  aria-hidden="true"></i></a> <img src="{{ doctor.picture.url }}" alt=""></div>
+            <div class="team-text">
+              <h5><a href="{% url 'doctor_details' doctor.id %}">{{ doctor.name }}</a></h5>
+              <strong>{{ doctor.speciality }}</strong>
+              <ul class="team-social">
+                {% if doctor.twitter %}
+                <li><a class="tw" href="{{ doctor.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                {% endif %}
+
+                {% if doctor.facebook %}
+                <li><a class="fb" href="{{ doctor.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                {% endif %}
+                {% if doctor.instagram %}
+                <li><a class="insta" href="{{ doctor.instagram }}"><i class="fa fa-instagram"
+                      aria-hidden="true"></i></a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--Team End-->
+
+
+  <!--Testimonials + Faqs Start-->
+  <section class="testi-faq">
+    <div class="container">
+      <div class="row">
+
+        <!--Testimonials Start-->
+        <div class="col-md-6">
+          <div class="home-testimonials">
+            <div class="sectio-title-2"> <strong>Read What Says Our</strong>
+              <h2>Happy Patients</h2>
+            </div>
+            <div id="testimonial-slider" class="owl-carousel owl-theme">
+
+              <!--Slider Start-->
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser.jpg' %}" alt=""> <strong>Sikha Agarwal</strong>
+                    <i>A heart patient</i> </div>
+                  <div class="test-text">
+                    <p>An exellent healthcare and doctors. The doctor was very calm and he used to answer all my questions.The services provided are 
+                      excellent. The procedure are done timely and the doctors visits after some interval.I am very happy to have my treatment over here.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser-2.jpg' %}" alt=""> <strong>Niki Nigania</strong>
+                    <i>A cancer patient</i> </div>
+                  <div class="test-text">
+                    <p>The healthcare and the doctors are excellent.The doctors and the staff treat very politely and gently.They are calm at every 
+                      situation.During this hard time of mine they kept me happy all te time for my better recovery.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimonial-holder">
+                  <div class="user-thumb"> <img src="{% static 'heartcare/images/tuser.jpg' %}" alt=""> <strong>Ramesh Singh</strong>
+                    <i>A Kidney patient</i> </div>
+                  <div class="test-text">
+                    <p>The healthcare and the doctors present here are the best. The doctors do a regular check up.They are very calm in nature 
+                        and are full of positivity.The staff are also very supportive and kind in nature.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!--Slider End-->
+
+            </div>
+          </div>
+        </div>
+        <!--Testimonials End-->
+
+        <!--FAQ Start-->
+        <div class="col-md-6">
+          <div class="home-faq">
+            <div class="sectio-title-2"> <strong>Feel Free For</strong>
+              <h2>Any FAQ’s</h2>
+            </div>
+            <div class="faqs">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> How much you charge
+                        for consultancy </a> </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body"> Our healthcare charges depends on the fees of the doctor you are appointing to  
+                      so on appointment you will be informed about the consultancy charge.</div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can we know the timing of appointment?</a> </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">The Health Care system provides you with all the details along with the 
+                      timing in your contact number one appointment is made with the respective doctor.</div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree"> Where does my refering doctor go? </a> </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="headingThree">
+                    <div class="panel-body"> The Health Care system provides you with the best doctors
+                       and the doctor we make appointment to visits the best hospital and clinics to treat the patients. </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FAQ End-->
+
+      </div>
+    </div>
+  </section>
+  <!--Testimonials + Faqs End-->
+
+</div>
+<!--Main Content End-->
+{% endblock maincontent %}
